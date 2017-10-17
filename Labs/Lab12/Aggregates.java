@@ -39,6 +39,23 @@ public class Aggregates{
 	System.out.println(list1);
 	myTrim(list1);
 	System.out.println(list1);
+
+	List<Person> roster = new ArrayList<>();
+	roster.add(new Person("Abe", Person.Sex.MALE));
+	roster.add(new Person("Barbara", Person.Sex.FEMALE));
+	roster.add(new Person("Chris", Person.Sex.MALE));
+	roster.add(new Person("Dorothy", Person.Sex.FEMALE));
+	roster.add(new Person("Eugene", Person.Sex.MALE));
+	roster.add(new Person("Fabian", Person.Sex.MALE));
+
+	roster.stream().filter(e->e.getGender() == Person.Sex.MALE).forEach(e->System.out.println(e.getName()));
+
+
+
+
+	List<Album> favs = new ArrayList<>();
+
+	ArrayList<Album> a = new ArrayList<Album>();
     }
 
     public static void myTrim(List<String> list){
