@@ -24,7 +24,7 @@ public class Pendulum extends Application {
 
 	// string
 
-	Line line = new Line(0, 20, 25, -.0070 * 10000 + 150);
+	Line line = new Line(100, 100, 25, -.0070 * 10000 + 150);
 	DoubleProperty startx = new SimpleDoubleProperty(100);
 	DoubleProperty starty = new SimpleDoubleProperty(100);
 
@@ -37,8 +37,8 @@ public class Pendulum extends Application {
 	ObservableList list = polyline.getPoints();
 	double scaleFactor = 0.0065;
 	for (double x = .15*Math.PI; x <= .85*Math.PI; x += 0.01) {
-	    list.add(40*(Math.cos(x)) + 100);
-	    list.add(40*(Math.sin(x)) + 100);
+	    list.add(60*(Math.cos(x)) + 100);
+	    list.add(60*(Math.sin(x)) + 100);
 	}
 	pane.getChildren().add(polyline);
 	// Create a path transition
@@ -56,7 +56,7 @@ public class Pendulum extends Application {
 	pt2.setDuration(Duration.millis(3000));
 	pt2.setPath(polyline);
 	pt2.setNode(line);
-	//pt2.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
+	pt2.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
 	pt2.setCycleCount(Timeline.INDEFINITE);
 	pt2.setAutoReverse(true);
 	pt2.play(); // Start animation
